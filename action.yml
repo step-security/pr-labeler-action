@@ -1,0 +1,15 @@
+name: 'PR Labeler'
+description: 'Automatically labels your PRs based on branch name patterns like feature/* or fix/*.'
+inputs:
+  repo-token:
+    description: 'Token for the repository. Can be passed in using `{{ secrets.GITHUB_TOKEN }}`'
+    default: ${{ github.token }}
+  configuration-path:
+    description: 'Path to label configurations'
+    default: '.github/pr-labeler.yml'
+branding:
+  icon: 'tag'
+  color: 'white'
+runs:
+  using: 'node16'
+  main: './dist/index.js'
