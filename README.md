@@ -25,7 +25,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: step-security/pr-labeler-action@v1
+      - uses: step-security/pr-labeler-action@v5
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           configuration-path: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
