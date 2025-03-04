@@ -4,12 +4,15 @@ import path from 'path';
 import action from '../src/action';
 import { Context } from '@actions/github/lib/context';
 import { WebhookPayload } from '@actions/github/lib/interfaces';
+import axios from 'axios';
 
 nock.disableNetConnect();
+jest.mock('axios');
 
 describe('pr-labeler-action', () => {
   beforeEach(() => {
     setupEnvironmentVariables();
+    (axios.get as jest.MockedFunction<typeof axios.get>).mockRejectedValue(new Error("Timeout or API not reachable"));
   });
 
   it('adds the "fix" label for "fix/510-logging" branch', async () => {
