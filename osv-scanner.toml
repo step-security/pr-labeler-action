@@ -1,3 +1,15 @@
 [[IgnoredVulns]]
 id = "GHSA-952p-6rrq-rcjv"
 reason = "It is a test dependency"
+
+[[IgnoredVulns]]
+id = "GHSA-h5c3-5r3r-rr8q"
+reason = "Untrusted headers are not processed"
+
+[[IgnoredVulns]]
+id = "GHSA-rmvr-2pp2-xj38"
+reason = "Untrusted headers are not processed"
+
+[[IgnoredVulns]]
+id = "GHSA-xx4v-prfh-6cgc"
+reason = "Untrusted headers are not processed"
