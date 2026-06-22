@@ -11,8 +11,8 @@
     "format:check": "prettier . --ignore-unknown --check"
   },
   "dependencies": {
-    "@actions/core": "^1.10.1",
-    "@actions/github": "^5.1.1",
+    "@actions/core": "^2.0.0",
+    "@actions/github": "^6.0.0",
     "axios": "^1.7.4",
     "matcher": "^4.0.0"
   },
