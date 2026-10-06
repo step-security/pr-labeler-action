@@ -38,9 +38,7 @@ describe('pr-labeler-action', () => {
 
     await action(new MockContext(pullRequestOpenedFixture({ ref: 'fix/510-logging' })));
 
-    expect(mockAddLabels).toHaveBeenCalledWith(
-      expect.objectContaining({ labels: ['fix'] }),
-    );
+    expect(mockAddLabels).toHaveBeenCalledWith(expect.objectContaining({ labels: ['fix'] }));
   });
 
   it('adds the "feature" label for "feature/sign-in-page/101" branch', async () => {
@@ -48,9 +46,7 @@ describe('pr-labeler-action', () => {
 
     await action(new MockContext(pullRequestOpenedFixture({ ref: 'feature/sign-in-page/101' })));
 
-    expect(mockAddLabels).toHaveBeenCalledWith(
-      expect.objectContaining({ labels: ['🎉 feature'] }),
-    );
+    expect(mockAddLabels).toHaveBeenCalledWith(expect.objectContaining({ labels: ['🎉 feature'] }));
   });
 
   it('adds the "release" label for "release/2.0" branch', async () => {
@@ -58,9 +54,7 @@ describe('pr-labeler-action', () => {
 
     await action(new MockContext(pullRequestOpenedFixture({ ref: 'release/2.0' })));
 
-    expect(mockAddLabels).toHaveBeenCalledWith(
-      expect.objectContaining({ labels: ['release'] }),
-    );
+    expect(mockAddLabels).toHaveBeenCalledWith(expect.objectContaining({ labels: ['release'] }));
   });
 
   it('uses the default config when no config was provided', async () => {
@@ -68,9 +62,7 @@ describe('pr-labeler-action', () => {
 
     await action(new MockContext(pullRequestOpenedFixture({ ref: 'fix/510-logging' })));
 
-    expect(mockAddLabels).toHaveBeenCalledWith(
-      expect.objectContaining({ labels: ['fix'] }),
-    );
+    expect(mockAddLabels).toHaveBeenCalledWith(expect.objectContaining({ labels: ['fix'] }));
   });
 
   it('adds only one label if the branch matches a negative pattern', async () => {
@@ -78,9 +70,7 @@ describe('pr-labeler-action', () => {
 
     await action(new MockContext(pullRequestOpenedFixture({ ref: 'release/skip-this-one' })));
 
-    expect(mockAddLabels).toHaveBeenCalledWith(
-      expect.objectContaining({ labels: ['skip-release'] }),
-    );
+    expect(mockAddLabels).toHaveBeenCalledWith(expect.objectContaining({ labels: ['skip-release'] }));
   });
 
   it("adds no labels if the branch doesn't match any patterns", async () => {
@@ -113,11 +103,9 @@ function configFixture(fileName = 'config.yml') {
     content: encodeContent(fs.readFileSync(path.join(__dirname, `fixtures/${fileName}`))),
     sha: '3d21ec53a331a6f037a91c368710b99387d012c1',
     url: 'https://api.github.com/repos/octokit/octokit.rb/contents/.github/release-drafter.yml',
-    git_url:
-      'https://api.github.com/repos/octokit/octokit.rb/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1',
+    git_url: 'https://api.github.com/repos/octokit/octokit.rb/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1',
     html_url: 'https://github.com/octokit/octokit.rb/blob/master/.github/release-drafter.yml',
-    download_url:
-      'https://raw.githubusercontent.com/octokit/octokit.rb/master/.github/release-drafter.yml',
+    download_url: 'https://raw.githubusercontent.com/octokit/octokit.rb/master/.github/release-drafter.yml',
     _links: {
       git: 'https://api.github.com/repos/octokit/octokit.rb/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1',
       self: 'https://api.github.com/repos/octokit/octokit.rb/contents/.github/release-drafter.yml',
